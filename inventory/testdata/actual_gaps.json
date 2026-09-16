@@ -1,0 +1,8 @@
+{
+  "items": [
+    {"kind": "admin_webhook", "key": "ORDERS_CREATE"},
+    {"kind": "admin_webhook", "key": "ORDERS_UPDATED"},
+    {"kind": "admin_webhook", "key": "ORDERS_PAID"},
+    {"kind": "admin_webhook", "key": "APP_UNINSTALLED"}
+  ]
+}

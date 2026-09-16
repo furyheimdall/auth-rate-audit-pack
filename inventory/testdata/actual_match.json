@@ -1,0 +1,10 @@
+{
+  "items": [
+    {"kind": "admin_webhook", "key": "ORDERS_CREATE"},
+    {"kind": "admin_webhook", "key": "ORDERS_UPDATED"},
+    {"kind": "admin_webhook", "key": "ORDERS_PAID"},
+    {"kind": "admin_webhook", "key": "ORDERS_CANCELLED"},
+    {"kind": "admin_webhook", "key": "ORDERS_RISK_ASSESSMENT_CHANGED"},
+    {"kind": "order_risk_assessment", "key": "signifyd"}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "cells": [
+    {"id": "shop_pay", "result": "pass"},
+    {"id": "apple_pay", "result": "pass"},
+    {"id": "google_pay", "result": "pass"},
+    {"id": "shop_pay.3ds2_sca", "result": "pass"},
+    {"id": "apple_pay.3ds2_sca", "result": "pass"},
+    {"id": "google_pay.3ds2_sca", "result": "pass"}
+  ]
+}
