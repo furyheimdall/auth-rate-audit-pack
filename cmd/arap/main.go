@@ -46,7 +46,7 @@ Usage:
   arap seats    print package seats
   arap help     print this help
 
-No network. Not a gateway / not a full fraud platform.
+No network. Thin OSS Go core — not a full fraud platform, not a gateway / Tokens orchestration.
 `)
 	return 0
 }
