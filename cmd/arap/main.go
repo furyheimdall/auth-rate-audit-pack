@@ -38,15 +38,15 @@ func run(args []string, w io.Writer) int {
 func writeHelp(w io.Writer) int {
 	fmt.Fprint(w, `Auth Rate Audit Pack — arap
 
-ShopifyQL payment_authorization_rate baseline + drift flag + Admin risk/webhook inventory + staging pass/fail — pre-BFCM agency/Plus pack.
-Auth rate drift ≠ fraud verdict. / Inventory ≠ remediation.
+Q4 auth-rate baseline + fraud/order-webhook mismatch checklist for Shopify Plus on Adyen/Braintree/Stripe — not a gateway.
+Auth rate drifts. Webhooks lie quietly.
 
 Usage:
   arap          print package seats
   arap seats    print package seats
   arap help     print this help
 
-No network. Not a full fraud platform / not a full gateway / Tokens orchestration.
+No network. Not a gateway / not a full fraud platform.
 `)
 	return 0
 }

@@ -1,53 +1,58 @@
 # Auth Rate Audit Pack
 
-ShopifyQL payment_authorization_rate baseline + drift flag + Admin risk/webhook inventory + staging pass/fail — pre-BFCM agency/Plus pack.
+Q4 auth-rate baseline + fraud/order-webhook mismatch checklist for Shopify Plus on Adyen/Braintree/Stripe — not a gateway.
 
-**Auth rate drift ≠ fraud verdict. / Inventory ≠ remediation.**
+**Auth rate drifts. Webhooks lie quietly.**
 
 English is the single source of truth for this marketing MVP canon. Do not invent scope beyond the locked IN / OUT tables.
 
-This repository is a thin OSS Go core. It is **not a full fraud platform** and **not a full gateway / Tokens orchestration**.
+This repository is a thin OSS Go core. It is **not a gateway** and **not a full fraud platform**.
 
 ## Anchors
 
-| Anchor | Meaning |
+**Auth rate drifts. Webhooks lie quietly.**
+
+Secondary (technical, not hero copy):
+
+| Note | Meaning |
 | --- | --- |
-| Auth rate drift ≠ fraud verdict | A >0.5pp move vs baseline is a drift flag, not a fraud decision. |
-| Inventory ≠ remediation | Listing Admin risk / webhook gaps is not fixing them. |
+| Auth rate drift ≠ fraud verdict | A >0.5pp unexplained drop vs baseline is a flag, not a fraud decision. |
+| Inventory ≠ remediation | Listing webhook / OrderRiskAssessment gaps is not fixing them. |
 
 ## ICP
 
-Agency + Shopify Plus mid-market (pre-BFCM), NOT Shopify Payments-native primary.
+Plus / high-mid DTC not on Shopify Payments; cards on Adyen/Braintree/Stripe (+ Signifyd/NoFraud/Kount). Buyer: Head of Payments / VP Eng / Plus ops; agency payments lead = influencer.
 
 ## IN (day-1)
 
-| In scope | Locked detail |
+| # | In scope |
 | --- | --- |
-| ShopifyQL `payment_authorization_rate` baseline | Record a baseline authorization rate |
-| Drift flag | Flag when rate moves >0.5 percentage points vs baseline |
-| Admin risk / webhook inventory checklist | Inventory only |
-| Vendor re-verify + staging pass/fail | Staging result, not production cutover |
-| Agency / Plus pre-BFCM pack framing | One pack assembly seat |
+| 1 | ShopifyQL auth-rate baseline + period/YoY delta (flag e.g. >0.5pp unexplained drop) |
+| 2 | Admin webhook / OrderRiskAssessment subscription inventory vs expected |
+| 3 | Fraud vendor re-verify runbook (Signifyd/NoFraud/Kount — session vs legacy) |
+| 4 | Staging pass-fail matrix template (Shop Pay/AP/GP + 3DS2 SCA smoke — checklist, not full QA) |
+| 5 | Scored PDF/report for agency SOW attach |
 
 ## OUT
 
 | Out of scope | Note |
 | --- | --- |
-| Full gateway / Tokens orchestration | Out — reject PRs |
+| Full gateway | Out — reject PRs |
+| Tokens / orchestration | Out — reject PRs |
 | Full fraud platform | Out — reject PRs |
-| Shopify Payments-native as primary ICP | Out — reject PRs |
-| Gift address flows | Out — reject PRs |
+| Live vendor console automation | Out — reject PRs |
+| Gift address-confirm | Out — reject PRs |
 | Deadbugz / DRC / OTM coupling | Out — reject PRs |
 
 ## Package seats
 
 | Package | Seat |
 | --- | --- |
-| [`baseline/`](baseline/) | ShopifyQL `payment_authorization_rate` baseline |
-| [`drift/`](drift/) | Drift flag when rate moves >0.5pp vs baseline |
-| [`inventory/`](inventory/) | Admin risk / webhook inventory checklist |
-| [`staging/`](staging/) | Vendor re-verify + staging pass/fail |
-| [`pack/`](pack/) | Agency / Plus pre-BFCM pack assembly |
+| [`baseline/`](baseline/) | ShopifyQL auth-rate baseline + period/YoY delta |
+| [`drift/`](drift/) | Flag e.g. >0.5pp unexplained drop |
+| [`inventory/`](inventory/) | Admin webhook / OrderRiskAssessment subscription inventory vs expected |
+| [`staging/`](staging/) | Fraud vendor re-verify runbook + staging pass-fail matrix |
+| [`pack/`](pack/) | Scored PDF/report for agency SOW attach |
 | [`cmd/arap/`](cmd/arap/) | CLI stub (prints seat names or help; no network in tests) |
 
 Day-1 seats are stubs that compile and pass smoke tests. Tests must not use the network. Do not add OUT-scope packages.

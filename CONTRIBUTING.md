@@ -6,11 +6,11 @@ English README canon is the single source of truth for scope. Keep the locked pa
 
 | Seat | Path |
 | --- | --- |
-| ShopifyQL `payment_authorization_rate` baseline | `baseline/` |
-| Drift flag (>0.5pp) | `drift/` |
-| Admin risk / webhook inventory | `inventory/` |
-| Vendor re-verify + staging pass/fail | `staging/` |
-| Agency / Plus pre-BFCM pack | `pack/` |
+| ShopifyQL auth-rate baseline + period/YoY delta | `baseline/` |
+| Flag e.g. >0.5pp unexplained drop | `drift/` |
+| Admin webhook / OrderRiskAssessment inventory | `inventory/` |
+| Fraud vendor re-verify + staging pass-fail matrix | `staging/` |
+| Scored PDF/report for agency SOW attach | `pack/` |
 | CLI | `cmd/arap/` |
 
 Add implementation inside an existing seat. Do not invent sibling product surfaces.
@@ -19,18 +19,20 @@ Add implementation inside an existing seat. Do not invent sibling product surfac
 
 OUT of the locked MVP (see README):
 
-- Full gateway / Tokens orchestration
+- Full gateway
+- Tokens / orchestration
 - Full fraud platform
-- Shopify Payments-native as primary ICP
-- Gift address flows
+- Live vendor console automation
+- Gift address-confirm
 - Deadbugz / DRC / OTM coupling
 
 PRs that add those surfaces will be closed.
 
 ## Anchors
 
-- Auth rate drift ≠ fraud verdict
-- Inventory ≠ remediation
+**Auth rate drifts. Webhooks lie quietly.**
+
+Secondary (technical): auth rate drift ≠ fraud verdict; inventory ≠ remediation.
 
 ## Develop
 
@@ -38,7 +40,7 @@ PRs that add those surfaces will be closed.
 go test ./...
 ```
 
-Tests must not require live network.
+Tests must not require live network. Do not automate live vendor consoles.
 
 ## Issues
 

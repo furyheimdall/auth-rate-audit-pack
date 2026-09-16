@@ -23,7 +23,7 @@ func TestHelp(t *testing.T) {
 	if code := run([]string{"help"}, &b); code != 0 {
 		t.Fatalf("exit %d", code)
 	}
-	if !strings.Contains(b.String(), "Auth rate drift ≠ fraud verdict") {
+	if !strings.Contains(b.String(), "Auth rate drifts. Webhooks lie quietly.") {
 		t.Fatalf("help = %q", b.String())
 	}
 }
