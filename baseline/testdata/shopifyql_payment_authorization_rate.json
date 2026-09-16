@@ -1,0 +1,30 @@
+{
+  "metric": "payment_authorization_rate",
+  "current": {
+    "successful_payments": 9425,
+    "unique_payment_attempts": 10000,
+    "period": {
+      "label": "2026-08",
+      "start": "2026-08-01",
+      "end": "2026-08-31"
+    }
+  },
+  "period_prior": {
+    "successful_payments": 9450,
+    "unique_payment_attempts": 10000,
+    "period": {
+      "label": "2026-07",
+      "start": "2026-07-01",
+      "end": "2026-07-31"
+    }
+  },
+  "yoy_prior": {
+    "successful_payments": 9500,
+    "unique_payment_attempts": 10000,
+    "period": {
+      "label": "2025-08",
+      "start": "2025-08-01",
+      "end": "2025-08-31"
+    }
+  }
+}
