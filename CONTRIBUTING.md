@@ -42,9 +42,10 @@ PRs that add those surfaces will be closed.
 
 ```bash
 go test ./...
+go run ./cmd/arap pack
 ```
 
-Tests must not require live network. Do not automate live vendor consoles.
+Tests must not require live network. Pack assembly uses fixtures when other seats are still stubs. Do not automate live vendor consoles. See [docs/run.md](docs/run.md).
 
 ## Issues
 

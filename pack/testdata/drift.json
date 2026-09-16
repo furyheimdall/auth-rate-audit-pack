@@ -1,0 +1,39 @@
+{
+  "name": "drift",
+  "baseline": {
+    "shop": "plus-dtc-stripe-fixture",
+    "gateway": "Stripe",
+    "period_label": "2026-Q3",
+    "period_rate": 91.8,
+    "prior_period_rate": 93.1,
+    "yoy_rate": 93.0,
+    "period_delta_pp": -1.3,
+    "yoy_delta_pp": -1.2
+  },
+  "drift": {
+    "observed_delta_pp": -1.3,
+    "threshold_pp": 0.5,
+    "unexplained": true,
+    "flagged": true
+  },
+  "inventory": {
+    "items": [
+      {"topic": "OrderRiskAssessment", "expected": true, "present": false},
+      {"topic": "webhooks/orders/create", "expected": true, "present": true},
+      {"topic": "webhooks/refunds/create", "expected": true, "present": false},
+      {"topic": "webhooks/orders/updated", "expected": true, "present": true}
+    ]
+  },
+  "staging": {
+    "vendors": [
+      {"vendor": "Kount", "mode": "legacy", "status": "skip"},
+      {"vendor": "NoFraud", "mode": "session", "status": "pass"}
+    ],
+    "checks": [
+      {"name": "Shop Pay", "status": "fail"},
+      {"name": "Apple Pay", "status": "pass"},
+      {"name": "Google Pay", "status": "pass"},
+      {"name": "3DS2 SCA", "status": "pass"}
+    ]
+  }
+}

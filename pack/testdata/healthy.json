@@ -1,0 +1,37 @@
+{
+  "name": "healthy",
+  "baseline": {
+    "shop": "plus-dtc-adyen-fixture",
+    "gateway": "Adyen",
+    "period_label": "2026-Q3",
+    "period_rate": 93.4,
+    "prior_period_rate": 93.5,
+    "yoy_rate": 93.2,
+    "period_delta_pp": -0.1,
+    "yoy_delta_pp": 0.2
+  },
+  "drift": {
+    "observed_delta_pp": -0.1,
+    "threshold_pp": 0.5,
+    "unexplained": false,
+    "flagged": false
+  },
+  "inventory": {
+    "items": [
+      {"topic": "OrderRiskAssessment", "expected": true, "present": true},
+      {"topic": "webhooks/orders/create", "expected": true, "present": true},
+      {"topic": "webhooks/refunds/create", "expected": true, "present": true}
+    ]
+  },
+  "staging": {
+    "vendors": [
+      {"vendor": "Signifyd", "mode": "session", "status": "pass"}
+    ],
+    "checks": [
+      {"name": "Shop Pay", "status": "pass"},
+      {"name": "Apple Pay", "status": "pass"},
+      {"name": "Google Pay", "status": "pass"},
+      {"name": "3DS2 SCA", "status": "pass"}
+    ]
+  }
+}

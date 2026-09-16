@@ -37,10 +37,10 @@ full gateway · Tokens/orchestration · full fraud platform · live vendor conso
 | [`drift/`](drift/) | Flag e.g. >0.5pp unexplained drop |
 | [`inventory/`](inventory/) | Admin webhook / OrderRiskAssessment subscription inventory vs expected |
 | [`staging/`](staging/) | Fraud vendor re-verify runbook (Signifyd/NoFraud/Kount — session vs legacy) + staging pass-fail matrix (Shop Pay/AP/GP + 3DS2 SCA smoke) |
-| [`pack/`](pack/) | Scored PDF/report for agency SOW attach |
-| [`cmd/arap/`](cmd/arap/) | CLI stub (prints seat names or help; no network in tests) |
+| [`pack/`](pack/) | Scored PDF/report for agency SOW attach — assembles the other seats from interfaces/fixtures |
+| [`cmd/arap/`](cmd/arap/) | CLI (seats, help, `pack`; no network in tests) |
 
-`baseline/` and `drift/` are fixture-backed (no live Admin/ShopifyQL). `inventory/`, `staging/`, and `pack/` remain compile+smoke stubs. Tests must not use the network. Do not add OUT-scope packages.
+`baseline/` and `drift/` are fixture-backed (no live Admin/ShopifyQL). `inventory/` and `staging/` may still be stubs. `pack/` assembles the seats from interfaces + fixtures so the scored report can ship without live Admin/ShopifyQL. Tests must not use the network. Do not add OUT-scope packages.
 
 ## Develop
 
@@ -48,13 +48,17 @@ full gateway · Tokens/orchestration · full fraud platform · live vendor conso
 go test ./...
 ```
 
-CLI (no network):
+CLI (no network; pack uses fixtures):
 
 ```bash
 go run ./cmd/arap
 go run ./cmd/arap help
 go run ./cmd/arap seats
+go run ./cmd/arap pack
+go run ./cmd/arap pack -fixture drift -format pdf -o report.pdf
 ```
+
+How to run the pack, plus IN/OUT reminders: [docs/run.md](docs/run.md).
 
 Module: [`github.com/furyheimdall/auth-rate-audit-pack`](https://github.com/furyheimdall/auth-rate-audit-pack) · License: [MIT](LICENSE)
 
