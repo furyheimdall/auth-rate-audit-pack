@@ -1,0 +1,20 @@
+{
+  "current": {
+    "rate_pp": 94.0,
+    "period": {
+      "label": "2026-Q3"
+    }
+  },
+  "period_prior": {
+    "rate_pp": 94.0,
+    "period": {
+      "label": "2026-Q2"
+    }
+  },
+  "yoy_prior": {
+    "rate_pp": 93.5,
+    "period": {
+      "label": "2025-Q3"
+    }
+  }
+}

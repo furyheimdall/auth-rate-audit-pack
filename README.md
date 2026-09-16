@@ -40,7 +40,7 @@ full gateway · Tokens/orchestration · full fraud platform · live vendor conso
 | [`pack/`](pack/) | Scored PDF/report for agency SOW attach |
 | [`cmd/arap/`](cmd/arap/) | CLI stub (prints seat names or help; no network in tests) |
 
-Day-1 seats are stubs that compile and pass smoke tests. Tests must not use the network. Do not add OUT-scope packages.
+`baseline/` and `drift/` are fixture-backed (no live Admin/ShopifyQL). `inventory/`, `staging/`, and `pack/` remain compile+smoke stubs. Tests must not use the network. Do not add OUT-scope packages.
 
 ## Develop
 
