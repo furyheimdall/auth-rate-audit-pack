@@ -1,0 +1,10 @@
+{
+  "steps": [
+    {"id": "signifyd.session", "status": "verified"},
+    {"id": "signifyd.legacy", "status": "verified", "notes": "legacy script removed"},
+    {"id": "nofraud.session", "status": "skip", "notes": "vendor not in use"},
+    {"id": "nofraud.legacy", "status": "skip", "notes": "vendor not in use"},
+    {"id": "kount.session", "status": "skip", "notes": "vendor not in use"},
+    {"id": "kount.legacy", "status": "skip", "notes": "vendor not in use"}
+  ]
+}

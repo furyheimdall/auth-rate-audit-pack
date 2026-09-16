@@ -1,0 +1,10 @@
+{
+  "steps": [
+    {"id": "signifyd.session", "status": "gap", "notes": "session path missing; legacy only"},
+    {"id": "signifyd.legacy", "status": "verified"},
+    {"id": "nofraud.session", "status": "skip"},
+    {"id": "nofraud.legacy", "status": "skip"},
+    {"id": "kount.session", "status": "skip"},
+    {"id": "kount.legacy", "status": "skip"}
+  ]
+}
