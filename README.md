@@ -44,6 +44,8 @@ full gateway · Tokens/orchestration · full fraud platform · live vendor conso
 
 ## Develop
 
+[Launch note](docs/launch-note.md)
+
 ```bash
 go test ./...
 ```
